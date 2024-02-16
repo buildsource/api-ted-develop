@@ -1,0 +1,37 @@
+@TEDCliente_HostAddress = https://localhost:44391
+@url = /api/v1
+
+###
+# Solicitar TED para teste de aprovação
+POST {{TEDCliente_HostAddress}}{{url}}/cliente/solicita-ted
+Accept: application/json
+Content-Type: application/json
+
+{
+    "clientId": 1, 
+    "schedulingDate": "2024-01-10T00:00:00",
+    "requestedValue": 100000,
+    "numeroAgencia": 1234,
+    "numeroConta": 1234567,
+    "numeroBanco": 123
+}
+
+###
+
+# Obter lista de TEDs para encontrar um ID válido para aprovação
+GET {{TEDCliente_HostAddress}}{{url}}/cliente/lista-ted/1
+Accept: application/json
+
+###
+
+# Aprovar TED com ID válido
+# Substitua {id} pelo ID do TED que deseja aprovar
+PUT {{TEDCliente_HostAddress}}{{url}}/admin/aprova-ted/{id}
+Accept: application/json
+
+###
+
+# Tentar aprovar TED com ID inválido
+PUT {{TEDCliente_HostAddress}}{{url}}/admin/aprova-ted/-1
+Accept: application/json
+

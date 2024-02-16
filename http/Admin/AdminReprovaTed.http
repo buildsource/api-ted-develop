@@ -1,0 +1,47 @@
+@TEDCliente_HostAddress = https://localhost:44391
+@url = /api/v1
+
+###
+# Solicitar TED para teste de reprovação
+POST {{TEDCliente_HostAddress}}{{url}}/cliente/solicita-ted
+Accept: application/json
+Content-Type: application/json
+
+{
+    "clientId": 1, 
+    "schedulingDate": "2024-01-10T00:00:00",
+    "requestedValue": 100000,
+    "numeroAgencia": 1234,
+    "numeroConta": 1234567,
+    "numeroBanco": 123
+}
+
+###
+
+# Obter lista de TEDs para encontrar um ID válido para reprovação
+GET {{TEDCliente_HostAddress}}{{url}}/cliente/lista-ted/1
+Accept: application/json
+
+###
+
+# Reprovar TED com ID válido
+# Substitua {id} pelo ID do TED que deseja reprovar
+PUT {{TEDCliente_HostAddress}}{{url}}/admin/reprova-ted/{id}
+Accept: application/json
+Content-Type: application/json
+
+{
+    "motivoReprovacao": "Motivo reprovação aqui"
+}
+
+###
+
+# Tentar reprovar TED com ID inválido
+PUT {{TEDCliente_HostAddress}}{{url}}/admin/reprova-ted/-1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "motivoReprovacao": "Motivo reprovação aqui"
+}
+

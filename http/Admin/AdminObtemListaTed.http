@@ -1,0 +1,66 @@
+@TEDCliente_HostAddress = https://localhost:44391
+@url = /api/v1
+
+###
+# Solicitar TED para teste de obtenção de lista
+POST {{TEDCliente_HostAddress}}{{url}}/cliente/solicita-ted
+Accept: application/json
+Content-Type: application/json
+
+{
+    "clientId": 1, 
+    "schedulingDate": "2024-01-10T00:00:00",
+    "requestedValue": 100000,
+    "numeroAgencia": 1234,
+    "numeroConta": 1234567,
+    "numeroBanco": 123
+}
+
+###
+
+# Obter lista de TEDs
+GET {{TEDCliente_HostAddress}}{{url}}/admin/lista-ted
+Accept: application/json
+
+###
+
+# Obter lista de TEDs com Cliente ID Inválido
+GET {{TEDCliente_HostAddress}}{{url}}/admin/lista-ted?clientId=-1
+Accept: application/json
+
+###
+
+# Obter lista de TEDs com Cliente ID Válido
+GET {{TEDCliente_HostAddress}}{{url}}/admin/lista-ted?clientId=1
+Accept: application/json
+
+###
+
+# Obter lista de TEDs com Cliente ID Sem TEDs Associados
+GET {{TEDCliente_HostAddress}}{{url}}/admin/lista-ted?clientId=999
+Accept: application/json
+
+###
+
+# Obter lista de TEDs Filtrada por Status
+GET {{TEDCliente_HostAddress}}{{url}}/admin/lista-ted?status=InProcess
+Accept: application/json
+
+###
+
+# Obter lista de TEDs Filtrada por Cliente ID e Status
+GET {{TEDCliente_HostAddress}}{{url}}/admin/lista-ted?clientId=1&status=InProcess
+Accept: application/json
+
+###
+
+# Obter lista de TEDs Filtrada por Cliente ID, Data de Início e Fim
+GET {{TEDCliente_HostAddress}}{{url}}/admin/lista-ted?clientId=1&startDate=2024-01-01&endDate=2024-01-31
+Accept: application/json
+
+###
+
+# Obter lista de TEDs Filtrada por Status, Cliente ID, Data de Início e Fim
+GET {{TEDCliente_HostAddress}}{{url}}/admin/lista-ted?status=InProcess&clientId=1&startDate=2024-01-01&endDate=2024-01-31
+Accept: application/json
+

@@ -1,0 +1,46 @@
+@TEDCliente_HostAddress = https://localhost:44391
+@url = /api/v1/cliente
+@clientId = 1002
+@id = 2017
+
+###
+# Solicita um novo TED
+POST {{TEDCliente_HostAddress}}{{url}}/solicita-ted
+Accept: application/json
+Content-Type: application/json
+
+{
+    "clientId": {{clientId}}, 
+    "schedulingDate": "2024-01-10T00:00:00",
+    "requestedValue": 1000.00,
+    "cpf": "10555004058",
+    "accountId": 123,
+    "numberAgency": 789,
+    "accountNumber": 101112,
+    "bankNumber": 131415
+}
+
+###
+
+# Obtém uma lista de TEDs para um cliente específico
+GET {{TEDCliente_HostAddress}}{{url}}/lista-ted/{{clientId}}
+Accept: application/json
+
+###
+
+# Cancela um TED pelo Id
+PUT {{TEDCliente_HostAddress}}{{url}}/cancela-ted/{{id}}
+Accept: application/json
+
+###
+
+# Obtém uma lista de TEDs com status Aprovado
+GET {{TEDCliente_HostAddress}}{{url}}/lista-ted/123?status=Approved
+Accept: application/json
+
+###
+
+# Obtém uma lista de TEDs com status Cancelado
+GET {{TEDCliente_HostAddress}}{{url}}/lista-ted/123?status=Canceled
+Accept: application/json
+

@@ -1,0 +1,54 @@
+﻿/* swagger-dark.css */
+:root {
+    --primary-color: #49cc90;
+    --secondary-color: #fca130;
+    --success-color: #49cc90;
+    --info-color: #87ceeb;
+    --warning-color: #fca130;
+    --danger-color: #f93e3e;
+    --light-bg-color: #3b4151;
+    --light-text-color: #b1b1b3;
+    --dark-bg-color: #1a1a1a;
+    --dark-text-color: white;
+}
+
+.swagger-ui {
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
+}
+
+    /* Garante que todos os textos sejam brancos */
+    .swagger-ui * {
+        color: #fca130 !important;
+    }
+
+    /* Estilos adicionais para links, se necessário */
+    .swagger-ui a {
+        color: #49cc90; /* ou outra cor de sua preferência */
+    }
+
+    /* Estilos para títulos, se necessário */
+    .swagger-ui .opblock-tag,
+    .swagger-ui .opblock-summary-method,
+    .swagger-ui .opblock-summary-path,
+    .swagger-ui .opblock-summary-description {
+        color: white !important;
+    }
+
+
+    /* Personalização do scheme-container */
+.swagger-ui .scheme-container {
+    background-color: #1a1a1a; /* Cor de fundo para o container */
+    color: white; /* Cor do texto */
+    border: 1px solid #333; /* Borda opcional */
+}
+
+/* Personalização adicional para elementos dentro do scheme-container */
+.swagger-ui .scheme-container .schemes > label {
+    color: white; /* Cor do texto das labels */
+}
+
+.swagger-ui .opblock-section-header {
+    background-color: #3b4151 !important; /* Cor de fundo para dropdowns/selects */
+    color: white; /* Cor do texto para dropdowns/selects */
+}

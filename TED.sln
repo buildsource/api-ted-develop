@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34310.174
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TED.API", "src\TED.API\TED.API.csproj", "{A6F05A73-B40C-4422-BA69-7F3343E09042}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F14B1FAB-B994-4A3D-8093-422FE528434C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{7DA799E0-C254-40E9-9F9E-51DC4E793E09}"
+	ProjectSection(SolutionItems) = preProject
+		sql\ScriptSQLServer.sql = sql\ScriptSQLServer.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{3F98DF09-8CD4-486E-8D90-E05F607837F0}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.gitignore = .gitignore
+		Dockerfile = Dockerfile
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "http", "http", "{1AAC7303-5B36-4021-B71C-C9B1DC209734}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cliente", "Cliente", "{F89AABCC-45FF-4517-883D-1FE1288130DA}"
+	ProjectSection(SolutionItems) = preProject
+		http\Cliente\ClienteCancelaTed.http = http\Cliente\ClienteCancelaTed.http
+		http\Cliente\ClienteObtemListaTed.http = http\Cliente\ClienteObtemListaTed.http
+		http\Cliente\ClienteSolicitaTed.http = http\Cliente\ClienteSolicitaTed.http
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Admin", "Admin", "{29CFD98C-7C8A-4A7D-817C-51F8434D4B62}"
+	ProjectSection(SolutionItems) = preProject
+		http\Admin\AdminAprovaTed.http = http\Admin\AdminAprovaTed.http
+		http\Admin\AdminObtemListaTed.http = http\Admin\AdminObtemListaTed.http
+		http\Admin\AdminReprovaTed.http = http\Admin\AdminReprovaTed.http
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{45E35EB3-EC84-4C0F-9C18-2F029FD825B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TED.Tests", "tests\TED.Tests\TED.Tests.csproj", "{6D962EE9-F7C4-475D-9F45-D7A2C809F545}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6F05A73-B40C-4422-BA69-7F3343E09042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6F05A73-B40C-4422-BA69-7F3343E09042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6F05A73-B40C-4422-BA69-7F3343E09042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6F05A73-B40C-4422-BA69-7F3343E09042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D962EE9-F7C4-475D-9F45-D7A2C809F545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D962EE9-F7C4-475D-9F45-D7A2C809F545}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D962EE9-F7C4-475D-9F45-D7A2C809F545}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D962EE9-F7C4-475D-9F45-D7A2C809F545}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A6F05A73-B40C-4422-BA69-7F3343E09042} = {F14B1FAB-B994-4A3D-8093-422FE528434C}
+		{F89AABCC-45FF-4517-883D-1FE1288130DA} = {1AAC7303-5B36-4021-B71C-C9B1DC209734}
+		{29CFD98C-7C8A-4A7D-817C-51F8434D4B62} = {1AAC7303-5B36-4021-B71C-C9B1DC209734}
+		{6D962EE9-F7C4-475D-9F45-D7A2C809F545} = {45E35EB3-EC84-4C0F-9C18-2F029FD825B0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B610008D-6E02-40A0-9187-B3B19D20D14B}
+	EndGlobalSection
+EndGlobal

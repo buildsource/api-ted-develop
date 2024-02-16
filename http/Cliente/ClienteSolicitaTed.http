@@ -1,0 +1,83 @@
+@TEDCliente_HostAddress = https://localhost:44391
+@url = /api/v1/cliente/solicita-ted
+
+###
+# Solicitar TED Dentro do Limite
+POST {{TEDCliente_HostAddress}}{{url}}
+Accept: application/json
+Content-Type: application/json
+
+{
+    "clientId": 1, 
+    "schedulingDate": "2024-01-10T00:00:00",
+    "requestedValue": 10.00,
+    "numeroAgencia": 1234,
+    "numeroConta": 1234567,
+    "numeroBanco": 123
+}
+
+###
+
+# Solicitar TED com Dados Inválidos
+POST {{TEDCliente_HostAddress}}{{url}}
+Accept: application/json
+Content-Type: application/json
+
+{
+    "clientId": 1, 
+    "schedulingDate": "2024-01-10T00:00:00",
+    "requestedValue": -1000.00,
+    "numeroAgencia": 1234,
+    "numeroConta": 1234567,
+    "numeroBanco": 123
+}
+
+###
+
+# Solicitar TED Acima do Limite Diário
+# Repita esta solicitação várias vezes até atingir o limite diário
+POST {{TEDCliente_HostAddress}}{{url}}
+Accept: application/json
+Content-Type: application/json
+
+{
+    "clientId": 1, 
+    "schedulingDate": "2024-01-10T00:00:00",
+    "requestedValue": 1000.00,
+    "numeroAgencia": 1234,
+    "numeroConta": 1234567,
+    "numeroBanco": 123
+}
+
+###
+
+# Solicitar TED Acima do Valor Máximo Diário
+POST {{TEDCliente_HostAddress}}{{url}}
+Accept: application/json
+Content-Type: application/json
+
+{
+    "clientId": 1, 
+    "schedulingDate": "2024-01-10T00:00:00",
+    "requestedValue": 100001, # Substitua este valor pelo valor máximo diário + 1
+    "numeroAgencia": 1234,
+    "numeroConta": 1234567,
+    "numeroBanco": 123
+}
+
+###
+
+# Solicitar TED Acima do Valor Máximo por Saque
+POST {{TEDCliente_HostAddress}}{{url}}
+Accept: application/json
+Content-Type: application/json
+
+{
+    "clientId": 1, 
+    "schedulingDate": "2024-01-10T00:00:00",
+    "requestedValue": 20001, # Substitua este valor pelo valor máximo por saque + 1
+    "numeroAgencia": 1234,
+    "numeroConta": 1234567,
+    "numeroBanco": 123
+}
+
